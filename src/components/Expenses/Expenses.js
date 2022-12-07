@@ -3,7 +3,7 @@ import './Expenses.css';
 import { useState } from 'react';
 import ExpensesFilter from './ExpensesFilter'
 import Card from '../UI/Card';
-import ExpenseItem from './ExpenseItem';
+import ExpensesList from './ExpensesList';
 
 
 function Expenses(props) {
@@ -27,12 +27,12 @@ function Expenses(props) {
 
     console.log(props.expenses);
 
-    let expensesComponent = <p>Nothing to show here!</p>;
-    if(filteredItems.length>0){
-        expensesComponent = filteredItems.map(item => {
-            return (<ExpenseItem key = {item.id} title={item.title} amount={item.amount} date={item.date} />)
-        })
-    }
+    // let expensesComponent = <p>Nothing to show here!</p>;
+    // if(filteredItems.length>0){
+    //     expensesComponent = filteredItems.map(item => {
+    //         return (<ExpenseItem key = {item.id} title={item.title} amount={item.amount} date={item.date} />)
+    //     })
+    // }
 
 
     return (
@@ -45,7 +45,7 @@ function Expenses(props) {
                 <ExpenseItem title = {props.expenses[3].title} amount = {props.expenses[3].amount} date = {props.expenses[3].date} /> */}
             
             {
-                expensesComponent
+                // expensesComponent
                 // props.expenses.map(item => {
                 //     return <ExpenseItem key = {item.id} title={item.title} amount={item.amount} date={item.date} />
                 // })
@@ -55,6 +55,7 @@ function Expenses(props) {
                 // })
                 
             }
+            <ExpensesList expenses = {filteredItems}/>
             {/* {
                 arr
             } */}
