@@ -75,6 +75,10 @@ function ExpenseForm (props){
     // console.log(newData.title, newData.amount, newData.date);
 
 
+    function cancelClickHandler(){
+        props.onChangeShowInputState(false);
+    }
+
     function submitHandler(event) {
         event.preventDefault();
         const newData = {
@@ -90,7 +94,10 @@ function ExpenseForm (props){
         setNewTitle('');
         setNewAmount('');
         setNewDate('');
+        cancelClickHandler();
     }
+
+    
     // console.log(newTitle, newAmount, newDate);
 
 
@@ -111,7 +118,8 @@ function ExpenseForm (props){
                 </div>
             </div>
             <div className = "new-expense__actions">
-                <button type = "submit" >Submit</button>
+                <button type = "submit"  >Submit</button>
+                <button onClick = {cancelClickHandler}>Cancel</button>
             </div>
         </form>
     );
