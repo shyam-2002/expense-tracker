@@ -21,6 +21,8 @@ function Expenses(props) {
     //     return <ExpenseItem title={item.title} amount={item.amount} date={item.date} />
     // })
 
+    console.log(props.expenses);
+
 
     return (
         // <div>
@@ -32,7 +34,7 @@ function Expenses(props) {
                 <ExpenseItem title = {props.expenses[3].title} amount = {props.expenses[3].amount} date = {props.expenses[3].date} /> */}
             {
                 props.expenses.map(item => {
-                    return <ExpenseItem title={item.title} amount={item.amount} date={item.date} />
+                    return <ExpenseItem key = {item.id} title={item.title} amount={item.amount} date={item.date} />
                 })
             }
             {/* {

@@ -78,8 +78,9 @@ function ExpenseForm (props){
     function submitHandler(event) {
         event.preventDefault();
         const newData = {
+            id: Math.random(),
             title: newTitle,
-            amount: newAmount,
+            amount: parseInt(newAmount),
             date: new Date(newDate)
         }
         props.onAddNewExpense(newData);
