@@ -27,6 +27,13 @@ function Expenses(props) {
 
     console.log(props.expenses);
 
+    let expensesComponent = <p>Nothing to show here!</p>;
+    if(filteredItems.length>0){
+        expensesComponent = filteredItems.map(item => {
+            return (<ExpenseItem key = {item.id} title={item.title} amount={item.amount} date={item.date} />)
+        })
+    }
+
 
     return (
         // <div>
@@ -36,14 +43,16 @@ function Expenses(props) {
                 <ExpenseItem title = {props.expenses[1].title} amount = {props.expenses[1].amount} date = {props.expenses[1].date} />
                 <ExpenseItem title = {props.expenses[2].title} amount = {props.expenses[2].amount} date = {props.expenses[2].date} />
                 <ExpenseItem title = {props.expenses[3].title} amount = {props.expenses[3].amount} date = {props.expenses[3].date} /> */}
+            
             {
+                expensesComponent
                 // props.expenses.map(item => {
                 //     return <ExpenseItem key = {item.id} title={item.title} amount={item.amount} date={item.date} />
                 // })
 
-                filteredItems.map(item => {
-                    return <ExpenseItem key = {item.id} title={item.title} amount={item.amount} date={item.date} />
-                })
+                // filteredItems.map(item => {
+                //     return <ExpenseItem key = {item.id} title={item.title} amount={item.amount} date={item.date} />
+                // })
                 
             }
             {/* {
