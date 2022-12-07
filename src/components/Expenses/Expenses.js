@@ -4,6 +4,7 @@ import { useState } from 'react';
 import ExpensesFilter from './ExpensesFilter'
 import Card from '../UI/Card';
 import ExpensesList from './ExpensesList';
+import ExpensesChart from './ExpensesChart';
 
 
 function Expenses(props) {
@@ -55,6 +56,7 @@ function Expenses(props) {
                 // })
                 
             }
+            <ExpensesChart filteredExpenses = {filteredItems}/>
             <ExpensesList expenses = {filteredItems}/>
             {/* {
                 arr
